@@ -28,3 +28,57 @@ A backend system built with **Go** and **MongoDB** to manage attendance for boot
 ## API Endpoints
 
 ### 1. Mark Attendance
+
+POST /attendance
+
+**Request Body:**
+{
+  "eventId": "E123",
+  "date": "2025-09-01",
+  "participantEmails": ["user1@example.com", "user2@example.com"]
+}
+
+
+**Response:**
+
+{
+  "success": true,
+  "message": "Attendance marked successfully"
+}
+
+**2. Fetch Participants**
+GET /participants?eventId=E123&date=2025-09-01
+
+
+**Response:**
+
+{
+  "participants": ["user1@example.com", "user2@example.com"]
+}
+
+**3. Generate Attendance Report**
+GET /report?eventId=E123
+
+
+Response:
+
+{
+  "eventId": "E123",
+  "attendance": {
+    "2025-09-01": ["user1@example.com", "user2@example.com"],
+    "2025-09-02": ["user3@example.com"]
+  }
+}
+
+**Installation**
+
+**Clone the repository:**
+
+git clone https://github.com/yourusername/AttendanceApp.git
+cd AttendanceApp
+
+
+Install dependencies: go mod tidy
+
+
+Run the server: go run main.go
