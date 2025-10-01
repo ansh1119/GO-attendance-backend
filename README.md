@@ -74,8 +74,8 @@ Response:
 
 **Clone the repository:**
 
-git clone https://github.com/yourusername/AttendanceApp.git
-cd AttendanceApp
+git clone https://github.com/ansh1119/GO-attendance-backend.git
+cd GO-attendance-backend
 
 
 Install dependencies: go mod tidy
